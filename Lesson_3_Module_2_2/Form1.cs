@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Lesson_3_Module_2_2
+namespace Task_1
 {
     public partial class Form1 : Form
     {
@@ -42,14 +42,14 @@ namespace Lesson_3_Module_2_2
             cb_hamburger.Checked = false;
             cb_potatofree.Checked = false;
             cb_cocacola.Checked = false;
-            hotdog_quant.Text=String.Empty;
-            hamburger_quant.Text=String.Empty;
-            potatofree_quant.Text=String.Empty;
-            cocacola_quant.Text=String.Empty;
-            hotdog_quant.ReadOnly = true;
-            hamburger_quant.ReadOnly = true;
-            potatofree_quant.ReadOnly = true;
-            cocacola_quant.ReadOnly = true;
+            hotdog_quantNumericUpDown.Text = String.Empty;
+            hamburger_quantNumericUpDown.Text = String.Empty;
+            potatofree_quantNumericUpDown.Text=String.Empty;
+            cocacola_quantNumericUpDown.Text=String.Empty;
+            hotdog_quantNumericUpDown.Enabled = false;
+            hamburger_quantNumericUpDown.Enabled=false;
+            potatofree_quantNumericUpDown.Enabled = false;
+            cocacola_quantNumericUpDown.Enabled = false;
             fuel.Text = "A-92";
             fuel_price.Text = a92.ToString();
             rdb_fuel_quant.Checked = true;
@@ -127,28 +127,28 @@ namespace Lesson_3_Module_2_2
         }
 
 
-        private double RozrahMiniCafe()
+        private decimal RozrahMiniCafe()
         {
-            double toOplata = 0;
+            decimal toOplata = 0;
 
             if (cb_hotdog.Checked)
             {
-                toOplata += double.Parse(hotdog_price.Text) * double.Parse(hotdog_quant.Text);
+                toOplata += decimal.Parse(hotdog_price.Text) * hotdog_quantNumericUpDown.Value;
             }
 
             if (cb_hamburger.Checked)
             {
-                toOplata += double.Parse(hamburger_price.Text) * double.Parse(hamburger_quant.Text);
+                toOplata += decimal .Parse(hamburger_price.Text) * hamburger_quantNumericUpDown.Value;
             }
 
             if (cb_potatofree.Checked)
             {
-                toOplata += double.Parse(potatofree_price.Text) * double.Parse(potatofree_quant.Text);
+                toOplata += decimal.Parse(potatofree_price.Text) * potatofree_quantNumericUpDown.Value;
             }
 
             if (cb_cocacola.Checked)
             {
-                toOplata += double.Parse(cocacola_price.Text) * double.Parse(cocacola_quant.Text);
+                toOplata += decimal.Parse(cocacola_price.Text) * cocacola_quantNumericUpDown.Value;
             }
 
             return toOplata;
@@ -156,20 +156,21 @@ namespace Lesson_3_Module_2_2
 
         private void quant_TextChanged(object sender, EventArgs e)
         {
-            cafe_to_pay.Text = RozrahMiniCafe().ToString("N2");
+            if (sender.ToString()!=null)
+                cafe_to_pay.Text = RozrahMiniCafe().ToString("N2");
         }
 
         private void cb_hotdog_Click(object sender, EventArgs e)
         {
             if (cb_hotdog.Checked)
             {
-                hotdog_quant.ReadOnly = false;
-                hotdog_quant.Text = 0.ToString();
+                hotdog_quantNumericUpDown.Enabled = true;
+                hotdog_quantNumericUpDown.Value = 0;
             }
             else
             {
-                hotdog_quant.ReadOnly = true;
-                hotdog_quant.Text = string.Empty;
+                hotdog_quantNumericUpDown.Enabled = false;
+                hotdog_quantNumericUpDown.Text = string.Empty;
             }
         }
 
@@ -177,13 +178,13 @@ namespace Lesson_3_Module_2_2
         {
             if (cb_hamburger.Checked)
             {
-                hamburger_quant.ReadOnly = false;
-                hamburger_quant.Text = 0.ToString();
+                hamburger_quantNumericUpDown.Enabled = true;
+                hamburger_quantNumericUpDown.Value = 0;
             }
             else
             {
-                hamburger_quant.Text = string.Empty;
-                hamburger_quant.ReadOnly = true;
+                hamburger_quantNumericUpDown.Enabled= false;
+                hamburger_quantNumericUpDown.Text = string.Empty;
             }
         }
 
@@ -191,13 +192,13 @@ namespace Lesson_3_Module_2_2
         {
             if (cb_potatofree.Checked)
             {
-                potatofree_quant.ReadOnly = false;
-                potatofree_quant.Text = 0.ToString();
+                potatofree_quantNumericUpDown.Enabled= true;
+                potatofree_quantNumericUpDown.Value = 0;
             }
             else
             {
-                potatofree_quant.Text = string.Empty;
-                potatofree_quant.ReadOnly = true;
+                potatofree_quantNumericUpDown.Enabled = false;
+                potatofree_quantNumericUpDown.Text = string.Empty;
             }
         }
 
@@ -205,13 +206,13 @@ namespace Lesson_3_Module_2_2
         {
             if (cb_cocacola.Checked)
             {
-                cocacola_quant.ReadOnly = false;
-                cocacola_quant.Text = 0.ToString();
+                cocacola_quantNumericUpDown.Enabled = true;
+                cocacola_quantNumericUpDown.Value=0;
             }
             else
             {
-                cocacola_quant.Text = string.Empty;
-                cocacola_quant.ReadOnly = true;
+                cocacola_quantNumericUpDown.Enabled = false;
+                cocacola_quantNumericUpDown.Text = string.Empty;
             }
         }
 

@@ -1,4 +1,4 @@
-﻿namespace Lesson_3_Module_2_2
+﻿namespace Task_1
 {
     partial class Form1
     {
@@ -52,15 +52,11 @@
             this.cb_hamburger = new System.Windows.Forms.CheckBox();
             this.cb_hotdog = new System.Windows.Forms.CheckBox();
             this.cocacola_price = new System.Windows.Forms.TextBox();
-            this.cocacola_quant = new System.Windows.Forms.TextBox();
             this.potatofree_price = new System.Windows.Forms.TextBox();
-            this.potatofree_quant = new System.Windows.Forms.TextBox();
             this.hamburger_price = new System.Windows.Forms.TextBox();
-            this.hamburger_quant = new System.Windows.Forms.TextBox();
             this.hotdog_price = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.hotdog_quant = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cafe_to_pay = new System.Windows.Forms.TextBox();
@@ -80,6 +76,10 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.hotdog_quantNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.hamburger_quantNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.potatofree_quantNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.cocacola_quantNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -89,6 +89,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hotdog_quantNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hamburger_quantNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.potatofree_quantNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cocacola_quantNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -275,20 +279,20 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cocacola_quantNumericUpDown);
+            this.groupBox3.Controls.Add(this.potatofree_quantNumericUpDown);
+            this.groupBox3.Controls.Add(this.hamburger_quantNumericUpDown);
+            this.groupBox3.Controls.Add(this.hotdog_quantNumericUpDown);
             this.groupBox3.Controls.Add(this.cb_cocacola);
             this.groupBox3.Controls.Add(this.cb_potatofree);
             this.groupBox3.Controls.Add(this.cb_hamburger);
             this.groupBox3.Controls.Add(this.cb_hotdog);
             this.groupBox3.Controls.Add(this.cocacola_price);
-            this.groupBox3.Controls.Add(this.cocacola_quant);
             this.groupBox3.Controls.Add(this.potatofree_price);
-            this.groupBox3.Controls.Add(this.potatofree_quant);
             this.groupBox3.Controls.Add(this.hamburger_price);
-            this.groupBox3.Controls.Add(this.hamburger_quant);
             this.groupBox3.Controls.Add(this.hotdog_price);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.hotdog_quant);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox3.Location = new System.Drawing.Point(381, 28);
@@ -354,14 +358,6 @@
             this.cocacola_price.Size = new System.Drawing.Size(55, 25);
             this.cocacola_price.TabIndex = 19;
             // 
-            // cocacola_quant
-            // 
-            this.cocacola_quant.Location = new System.Drawing.Point(254, 181);
-            this.cocacola_quant.Name = "cocacola_quant";
-            this.cocacola_quant.Size = new System.Drawing.Size(61, 25);
-            this.cocacola_quant.TabIndex = 18;
-            this.cocacola_quant.TextChanged += new System.EventHandler(this.quant_TextChanged);
-            // 
             // potatofree_price
             // 
             this.potatofree_price.Location = new System.Drawing.Point(179, 141);
@@ -370,14 +366,6 @@
             this.potatofree_price.Size = new System.Drawing.Size(55, 25);
             this.potatofree_price.TabIndex = 17;
             // 
-            // potatofree_quant
-            // 
-            this.potatofree_quant.Location = new System.Drawing.Point(254, 141);
-            this.potatofree_quant.Name = "potatofree_quant";
-            this.potatofree_quant.Size = new System.Drawing.Size(61, 25);
-            this.potatofree_quant.TabIndex = 16;
-            this.potatofree_quant.TextChanged += new System.EventHandler(this.quant_TextChanged);
-            // 
             // hamburger_price
             // 
             this.hamburger_price.Location = new System.Drawing.Point(179, 94);
@@ -385,14 +373,6 @@
             this.hamburger_price.ReadOnly = true;
             this.hamburger_price.Size = new System.Drawing.Size(55, 25);
             this.hamburger_price.TabIndex = 15;
-            // 
-            // hamburger_quant
-            // 
-            this.hamburger_quant.Location = new System.Drawing.Point(254, 94);
-            this.hamburger_quant.Name = "hamburger_quant";
-            this.hamburger_quant.Size = new System.Drawing.Size(61, 25);
-            this.hamburger_quant.TabIndex = 14;
-            this.hamburger_quant.TextChanged += new System.EventHandler(this.quant_TextChanged);
             // 
             // hotdog_price
             // 
@@ -421,14 +401,6 @@
             this.label8.Size = new System.Drawing.Size(38, 17);
             this.label8.TabIndex = 11;
             this.label8.Text = "Ціна";
-            // 
-            // hotdog_quant
-            // 
-            this.hotdog_quant.Location = new System.Drawing.Point(254, 53);
-            this.hotdog_quant.Name = "hotdog_quant";
-            this.hotdog_quant.Size = new System.Drawing.Size(61, 25);
-            this.hotdog_quant.TabIndex = 11;
-            this.hotdog_quant.TextChanged += new System.EventHandler(this.quant_TextChanged);
             // 
             // groupBox4
             // 
@@ -628,6 +600,38 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
             // 
+            // hotdog_quantNumericUpDown
+            // 
+            this.hotdog_quantNumericUpDown.Location = new System.Drawing.Point(254, 53);
+            this.hotdog_quantNumericUpDown.Name = "hotdog_quantNumericUpDown";
+            this.hotdog_quantNumericUpDown.Size = new System.Drawing.Size(61, 25);
+            this.hotdog_quantNumericUpDown.TabIndex = 24;
+            this.hotdog_quantNumericUpDown.ValueChanged += new System.EventHandler(this.quant_TextChanged);
+            // 
+            // hamburger_quantNumericUpDown
+            // 
+            this.hamburger_quantNumericUpDown.Location = new System.Drawing.Point(254, 94);
+            this.hamburger_quantNumericUpDown.Name = "hamburger_quantNumericUpDown";
+            this.hamburger_quantNumericUpDown.Size = new System.Drawing.Size(61, 25);
+            this.hamburger_quantNumericUpDown.TabIndex = 25;
+            this.hamburger_quantNumericUpDown.ValueChanged += new System.EventHandler(this.quant_TextChanged);
+            // 
+            // potatofree_quantNumericUpDown
+            // 
+            this.potatofree_quantNumericUpDown.Location = new System.Drawing.Point(254, 141);
+            this.potatofree_quantNumericUpDown.Name = "potatofree_quantNumericUpDown";
+            this.potatofree_quantNumericUpDown.Size = new System.Drawing.Size(61, 25);
+            this.potatofree_quantNumericUpDown.TabIndex = 26;
+            this.potatofree_quantNumericUpDown.ValueChanged += new System.EventHandler(this.quant_TextChanged);
+            // 
+            // cocacola_quantNumericUpDown
+            // 
+            this.cocacola_quantNumericUpDown.Location = new System.Drawing.Point(254, 181);
+            this.cocacola_quantNumericUpDown.Name = "cocacola_quantNumericUpDown";
+            this.cocacola_quantNumericUpDown.Size = new System.Drawing.Size(61, 25);
+            this.cocacola_quantNumericUpDown.TabIndex = 27;
+            this.cocacola_quantNumericUpDown.ValueChanged += new System.EventHandler(this.quant_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -663,6 +667,10 @@
             this.groupBox6.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hotdog_quantNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hamburger_quantNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.potatofree_quantNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cocacola_quantNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -692,15 +700,11 @@
         private System.Windows.Forms.CheckBox cb_hamburger;
         private System.Windows.Forms.CheckBox cb_hotdog;
         private System.Windows.Forms.TextBox cocacola_price;
-        private System.Windows.Forms.TextBox cocacola_quant;
         private System.Windows.Forms.TextBox potatofree_price;
-        private System.Windows.Forms.TextBox potatofree_quant;
         private System.Windows.Forms.TextBox hamburger_price;
-        private System.Windows.Forms.TextBox hamburger_quant;
         private System.Windows.Forms.TextBox hotdog_price;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox hotdog_quant;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox cafe_to_pay;
@@ -720,6 +724,10 @@
         public System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.NumericUpDown hotdog_quantNumericUpDown;
+        private System.Windows.Forms.NumericUpDown hamburger_quantNumericUpDown;
+        private System.Windows.Forms.NumericUpDown potatofree_quantNumericUpDown;
+        private System.Windows.Forms.NumericUpDown cocacola_quantNumericUpDown;
     }
 }
 
